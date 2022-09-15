@@ -7,7 +7,7 @@
 
 :root {
   --hue: 170;
-  --primary-color: hsl(var(--hue), 100%, 26%); /*variável no css*/
+  --primary-color: hsl(var(--hue), 100%, 26%);
   --headline: #212529;
   --paragraph: #495057;
 
@@ -21,11 +21,11 @@
 
   --brand-dark: hsl(var(--hue), 100%, 14%);
 
-  font-size: 62.5%; /*1rem = 10px agora*/
+  font-size: 62.5%;
 }
 
 html {
-  scroll-behavior: smooth; /*vai fazer com que quando selecionar no menu onde quer ir, ele role a página suavemente*/
+  scroll-behavior: smooth;
 }
 
 html,
@@ -154,24 +154,20 @@ body.menu-expanded #navigation .logo path,
   padding-block: 0;
   padding-top: calc(
     4.1rem + var(--nav-height)
-  ); /*como a nav tá sobreposta, é necessário que se utilize a margin-top do header + o tamanho da nav*/
+  );
 }
 
-/*
-pseudo-element: criar elementos no html com CSS
-Nesse caso, para colocar o background
-*/
 #home::before {
   content: '';
   width: 100%;
   height: calc(76% + var(--nav-height));
-  display: block; /*obrigatório para que o elemento apareça*/
+  display: block;
   background-color: var(--green-light);
 
-  position: absolute; /*vai fazer sobrepor os outros elementos, não empurrando eles pra baixp*/
-  top: 0; /*colou na borda superior esquerda*/
+  position: absolute; 
+  top: 0;
   left: 0;
-  z-index: -1; /*for pra trás dos outros elementos*/
+  z-index: -1;
 }
 
 #home p {
@@ -187,10 +183,10 @@ Nesse caso, para colocar o background
 }
 
 #home img {
-  width: 26.3rem; /*faz a img ficar responsiva*/
+  width: 26.3rem;
   display: block;
   margin-inline: auto;
-  object-position: 0 2rem; /*pra img ficar colada na caixa mesmo que aumente ou diminua o zoom da página*/
+  object-position: 0 2rem;
 }
 
 #home .stats {
@@ -205,9 +201,9 @@ Nesse caso, para colocar o background
   border-radius: 0.6rem;
 
   display: flex;
-  flex-direction: column; /*pra alinhar os stats todos pelo centro*/
+  flex-direction: column;
   justify-content: center;
-  gap: 6rem; /*cria as margens entre os elementos*/
+  gap: 6rem;
 }
 
 #home .stat h3 {
@@ -305,11 +301,11 @@ body.menu-expanded .menu {
 
   padding-top: var(--nav-height);
 
-  /*para o menu abrir suavemente*/
+  
   transition: transform 500ms;
   transform: translateX(
     0
-  ); /*no eixo x, ou seja, vai abrir da direita pra esquerda. Se quisesse que abrisse de baixo pra cima, seria eixo Y*/
+  );
 }
 
 .menu ul:nth-child(1) {
@@ -606,7 +602,6 @@ footer .social-links {
     font-weight: 700;
   }
 
-  /*bordinha embaixo do link*/
   nav#navigation .menu li a::after {
     content: '';
     width: 0%;
@@ -656,12 +651,12 @@ footer .social-links {
     grid-template-columns: 60.5rem 1fr;
     grid-template-areas:
       'A B'
-      'C C'; /*Faz o "desenho" de como quer as áreas mesmo*/
+      'C C'; 
   }
 
   #home .col-a {
     text-align: left;
-    align-self: center; /*faz os elementos ficarem alinhados ao centro da caixa do grid em que está*/
+    align-self: center; 
   }
 
   #home h1 {
@@ -680,7 +675,6 @@ footer .social-links {
   }
 
   #home .stats .stat + .stat {
-    /*o que significa: pega o .stat que antes dele tem um .stat tbm*/
     border-left: 1px solid var(--primary-color);
   }
 
